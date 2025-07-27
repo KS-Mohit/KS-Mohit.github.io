@@ -244,12 +244,12 @@ article.active {
 }
 
 .has-scrollbar::-webkit-scrollbar-track {
-  background: var(--onyx);
+  background: transparent;
   border-radius: 5px;
 }
 
 .has-scrollbar::-webkit-scrollbar-thumb {
-  background: var(--orange-yellow-crayola);
+  background: var(--jet);
   border-radius: 5px;
 }
 
@@ -1861,11 +1861,9 @@ textarea.form-input::-webkit-resizer { display: none; }
   gap: 12px;
 }
 
-.tech-item i {
-  font-size: 22px;
-  color: var(--orange-yellow-crayola);
+.tech-item img {
   width: 24px;
-  text-align: center;
+  height: 24px;
 }
 
 .tech-item span {
@@ -1880,4 +1878,97 @@ textarea.form-input::-webkit-resizer { display: none; }
   font-size: 40px;
   color: var(--orange-yellow-crayola);
   margin: auto;
+}
+
+/* --- CATEGORIZED SCROLLING TECH STACK --- */
+
+.tech-category {
+  margin-top: 30px;
+}
+
+.tech-category-title {
+  color: var(--light-gray-70);
+  font-size: var(--fs-5);
+  font-weight: var(--fw-500);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+.rounded-logo {
+  border-radius: 8px; /* Adjust for more or less rounding */
+}
+
+/* Override original size to make logos smaller */
+.tech-stack-section .clients-item {
+  min-width: auto;
+  padding: 0 10px;
+}
+
+/* Style the logos to be smaller and in full color */
+.tech-stack-section .clients-item img {
+  height: 60px; /* You can adjust this value */
+  width: auto;
+  filter: grayscale(0); /* Removes grayscale */
+  opacity: 0.8;
+  transition: var(--transition-1);
+}
+
+.tech-stack-section .clients-item img:hover {
+  opacity: 1;
+  transform: scale(1.60); /* Makes the logo bigger on hover */
+}
+
+/* --- SCROLL ARROWS FOR TECH STACK --- */
+.scrolling-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.scrolling-wrapper .clients-list {
+  flex-grow: 1;
+  /* Add scroll snapping */
+  scroll-snap-type: x mandatory;
+  /* Hide the scrollbar */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrolling-wrapper .clients-list::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
+}
+
+.scrolling-wrapper .clients-item {
+  /* Set item width to show ~5 at a time */
+  flex: 0 0 calc(20% - 12px);
+  scroll-snap-align: start;
+  display: flex;
+  justify-content: center;
+}
+
+.scroll-btn {
+  background: hsla(0, 0%, 25%, 0.6);
+  color: hsl(0, 0%, 90%);
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  border: 1px solid var(--jet);
+  cursor: pointer;
+  flex-shrink: 0;
+  opacity: 0;
+  transition: var(--transition-1);
+  z-index: 2; /* Make sure buttons are on top */
+}
+
+.tech-category:hover .scroll-btn {
+  opacity: 1;
+}
+
+.scroll-btn:hover {
+  background: hsla(0, 0%, 35%, 0.8);
 }

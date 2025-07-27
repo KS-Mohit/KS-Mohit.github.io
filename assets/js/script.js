@@ -130,3 +130,26 @@ for (let i = 0; i < navigationLinks.length; i++) {
     window.scrollTo(0, 0);
   });
 }
+
+// --- SCROLL BUTTONS FOR TECH STACK ---
+document.addEventListener('DOMContentLoaded', () => {
+  const allScrollingWrappers = document.querySelectorAll('.scrolling-wrapper');
+
+  allScrollingWrappers.forEach(wrapper => {
+    const scrollList = wrapper.querySelector('.clients-list');
+    const prevBtn = wrapper.querySelector('[data-scroll-btn="prev"]');
+    const nextBtn = wrapper.querySelector('[data-scroll-btn="next"]');
+
+    if (scrollList && prevBtn && nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        const scrollAmount = scrollList.offsetWidth; // Get width of the visible area
+        scrollList.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      });
+
+      prevBtn.addEventListener('click', () => {
+        const scrollAmount = scrollList.offsetWidth; // Get width of the visible area
+        scrollList.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      });
+    }
+  });
+});
