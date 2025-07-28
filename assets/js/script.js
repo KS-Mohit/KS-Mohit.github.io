@@ -74,31 +74,7 @@ for (let i = 0; i < filterBtn.length; i++) {
 
 
 
-// contact form variables
-const form = document.querySelector("[data-form]");
-const formInputs = document.querySelectorAll("[data-form-input]");
-const formBtn = document.querySelector("[data-form-btn]");
-
-// add event to all form input field
-for (let i = 0; i < formInputs.length; i++) {
-  formInputs[i].addEventListener("input", function () {
-
-    // check form validation
-    if (form.checkValidity()) {
-      formBtn.removeAttribute("disabled");
-    } else {
-      formBtn.setAttribute("disabled", "");
-    }
-
-  });
-}
-
-
-
-//
-// --- FIXED PAGE NAVIGATION SECTION ---
-//
-
+// page navigation variables
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
 const pages = document.querySelectorAll("[data-page]");
 
@@ -141,13 +117,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextBtn = wrapper.querySelector('[data-scroll-btn="next"]');
 
     if (scrollList && prevBtn && nextBtn) {
+      
+      const calculateScrollAmount = () => {
+        const firstItem = scrollList.querySelector('.clients-item');
+        if (!firstItem) return 250; // Default value if no items
+
+        const listStyles = window.getComputedStyle(scrollList);
+        const gap = parseFloat(listStyles.gap) || 20; // Get gap from CSS
+
+        return firstItem.offsetWidth + gap; // Calculate width of one item + gap
+      };
+
       nextBtn.addEventListener('click', () => {
-        const scrollAmount = scrollList.offsetWidth; // Get width of the visible area
+        const scrollAmount = calculateScrollAmount();
         scrollList.scrollBy({ left: scrollAmount, behavior: 'smooth' });
       });
 
       prevBtn.addEventListener('click', () => {
-        const scrollAmount = scrollList.offsetWidth; // Get width of the visible area
+        const scrollAmount = calculateScrollAmount();
         scrollList.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
       });
     }
