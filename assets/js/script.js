@@ -42,7 +42,6 @@ const filterFunc = function (selectedValue) {
 
   for (let i = 0; i < filterItems.length; i++) {
     
-    // The main change is using .includes() to check for the category.
     if (filterItems[i].dataset.category.includes(selectedValue)) {
       filterItems[i].classList.add("active");
     } else {
@@ -146,8 +145,11 @@ const liveHostname = 'ks-mohit.github.io';
 if (window.location.hostname === liveHostname) {
   const clustrMapScript = document.createElement('script');
   clustrMapScript.type = 'text/javascript';
-  clustrMapScript.id = 'clustrmaps';
-  clustrMapScript.src = '//clustrmaps.com/map_v2.js?d=qbshG7xcbGwHrIzZKOevBIletzGzMGhwLU-cjmiVwn8&cl=ffffff&w=a';
+  clustrMapScript.id = 'clstr_globe';
+  
+  // Updated with your new globe widget URL
+  clustrMapScript.src = '//clustrmaps.com/globe.js?d=dhgQ8WX-HHlM1Wyep1hPXeZSox1umdybb-IZfvzsEjQ';
+
   document.querySelector('.visitor-map').appendChild(clustrMapScript);
 }
 

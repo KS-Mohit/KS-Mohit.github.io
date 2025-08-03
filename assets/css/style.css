@@ -669,12 +669,14 @@ main {
 
 .clients-list {
   display: flex;
-  align-items: center; /* Vertically aligns all logo boxes */
-  gap: 20px;           /* Sets the space between logos */
-  overflow-x: auto;    /* Enables horizontal scrolling */
-  padding: 20px 15px;  /* Adds padding on all sides */
-  scroll-snap-type: inline mandatory; /* Keeps your scroll-snap behavior */
-  -webkit-overflow-scrolling: touch; /* Improves scrolling on mobile */
+  align-items: center;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 20px 10px;
+  scroll-snap-type: inline mandatory;
+  
+  /* Add this line to enforce a consistent height */
+  min-height: 120px;
 }
 
 .clients-item {
@@ -2011,9 +2013,9 @@ textarea.form-input::-webkit-resizer { display: none; }
   transition: var(--transition-1);
 }
 
-.project-item.active .project-card {
+/* .project-item.active .project-card {
   box-shadow: 0 0 15px hsla(48, 89%, 65%, 0.15);
-}
+} */
 
 .project-card:hover {
   transform: translateY(-5px);
@@ -2089,3 +2091,4 @@ textarea.form-input::-webkit-resizer { display: none; }
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
