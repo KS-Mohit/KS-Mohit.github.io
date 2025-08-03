@@ -37,13 +37,13 @@ for (let i = 0; i < selectItems.length; i++) {
 // filter variables
 const filterItems = document.querySelectorAll("[data-filter-item]");
 
+// Updated filter function to support multiple categories
 const filterFunc = function (selectedValue) {
 
   for (let i = 0; i < filterItems.length; i++) {
-
-    if (selectedValue === "all") {
-      filterItems[i].classList.add("active");
-    } else if (selectedValue === filterItems[i].dataset.category) {
+    
+    // The main change is using .includes() to check for the category.
+    if (filterItems[i].dataset.category.includes(selectedValue)) {
       filterItems[i].classList.add("active");
     } else {
       filterItems[i].classList.remove("active");
@@ -142,30 +142,19 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // --- Conditionally Load ClustrMaps on Live Site Only ---
-
-// This is your live website's address
 const liveHostname = 'ks-mohit.github.io';
-
-// Check if the current page is the live site
 if (window.location.hostname === liveHostname) {
-  // Create a new script element
   const clustrMapScript = document.createElement('script');
-
-  // Set the script's attributes to match the one from ClustrMaps
   clustrMapScript.type = 'text/javascript';
   clustrMapScript.id = 'clustrmaps';
   clustrMapScript.src = '//clustrmaps.com/map_v2.js?d=qbshG7xcbGwHrIzZKOevBIletzGzMGhwLU-cjmiVwn8&cl=ffffff&w=a';
-
-  // Find the empty .visitor-map div and add the script inside it
   document.querySelector('.visitor-map').appendChild(clustrMapScript);
 }
 
 // --- Run Filter on Page Load ---
 window.addEventListener("load", () => {
-  // Find the button that is set to 'active' in the HTML
   const initialFilterBtn = document.querySelector(".filter-list .active");
   if (initialFilterBtn) {
-    // Run the filter function with that button's category
     filterFunc(initialFilterBtn.innerText.toLowerCase());
   }
 });
