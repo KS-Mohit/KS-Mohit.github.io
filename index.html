@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mohit Kumar - AI Engineer</title>
+  <title>Mohit's Portfolio</title>
 
   <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
   <link rel="stylesheet" href="./assets/css/style.css">
@@ -21,68 +21,73 @@
 
   <main>
 
-    <aside class="sidebar" data-sidebar>
+<aside class="sidebar" data-sidebar>
 
-      <div class="sidebar-info">
-        <figure class="avatar-box">
-          <img src="./assets/images/my-avatar.png" alt="Mohit Kumar" width="80">
-        </figure>
-        <div class="info-content">
-          <h1 class="name" title="Mohit Kumar">Mohit Kumar</h1>
-          <p class="title">AI Engineer</p>
+  <div class="sidebar-info">
+    <figure class="avatar-box">
+      <img src="./assets/images/my-avatar.png" alt="Mohit Kumar" width="80">
+    </figure>
+    <div class="info-content">
+      <h1 class="name" title="Mohit Kumar">Mohit Kumar</h1>
+      <p class="title">Software Engineer</p>
+    </div>
+    <button class="info_more-btn" data-sidebar-btn>
+      <span>Show Contacts</span>
+      <ion-icon name="chevron-down"></ion-icon>
+    </button>
+  </div>
+
+  <div class="sidebar-info_more">
+    <div class="separator"></div>
+    <ul class="contacts-list">
+
+      <li class="contact-item">
+        <div class="icon-box">
+          <ion-icon name="location-outline"></ion-icon>
         </div>
-        <button class="info_more-btn" data-sidebar-btn>
-          <span>Show Contacts</span>
-          <ion-icon name="chevron-down"></ion-icon>
-        </button>
-      </div>
+        <div class="contact-info">
+          <p class="contact-title">Location</p>
+          <address>Delhi, India</address>
+        </div>
+      </li>
 
-      <div class="sidebar-info_more">
-        <div class="separator"></div>
-        <ul class="contacts-list">
-          <li class="contact-item">
-            <div class="icon-box">
-              <ion-icon name="mail-outline"></ion-icon>
-            </div>
-            <div class="contact-info">
-              <p class="contact-title">Email</p>
-              <a href="mailto:5102mohit@gmail.com" class="contact-link">5102mohit@gmail.com</a>
-            </div>
-          </li>
-          <li class="contact-item">
-            <div class="icon-box">
-              <ion-icon name="call-outline"></ion-icon>
-            </div>
-            <div class="contact-info">
-              <p class="contact-title">Phone</p>
-              <a href="tel:+918374106416" class="contact-link">+91-8374106416</a>
-            </div>
-          </li>
-          <li class="contact-item">
-            <div class="icon-box">
-              <ion-icon name="location-outline"></ion-icon>
-            </div>
-            <div class="contact-info">
-              <p class="contact-title">Location</p>
-              <address>Delhi, India</address>
-            </div>
-          </li>
-        </ul>
-        <div class="separator"></div>
-        <ul class="social-list">
-          <li class="social-item">
-            <a href="https://github.com/KS-Mohit" class="social-link" target="_blank">
-              <ion-icon name="logo-github"></ion-icon>
-            </a>
-          </li>
-          <li class="social-item">
-            <a href="https://linkedin.com/in/ks-mohit" class="social-link" target="_blank">
-              <ion-icon name="logo-linkedin"></ion-icon>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </aside>
+      <li class="contact-item">
+        <div class="icon-box">
+          <ion-icon name="call-outline"></ion-icon>
+        </div>
+        <div class="contact-info">
+          <p class="contact-title">Phone</p>
+          <a href="tel:+918374106416" class="contact-link">+91-8374106416</a>
+        </div>
+      </li>
+
+      <li class="contact-item">
+        <div class="icon-box">
+          <ion-icon name="mail-outline"></ion-icon>
+        </div>
+        <div class="contact-info">
+          <p class="contact-title">Email</p>
+          <a href="mailto:5102mohit@gmail.com" class="contact-link">5102mohit@gmail.com</a>
+        </div>
+      </li>
+      
+    </ul>
+    <div class="separator"></div>
+    <ul class="social-list">
+      <li class="social-item">
+        <a href="https://github.com/KS-Mohit" class="social-link" target="_blank">
+          <ion-icon name="logo-github"></ion-icon>
+        </a>
+      </li>
+      <li class="social-item">
+        <a href="https://linkedin.com/in/ks-mohit" class="social-link" target="_blank">
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+</aside>
 
     <div class="main-content">
 
@@ -97,9 +102,9 @@
           <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Resume</button>
           </li>
-          <li class="navbar-item">
+          <!-- <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Blog</button>
-          </li>
+          </li> -->
           <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Contact</button>
           </li>
@@ -116,7 +121,7 @@
           </p>
         </section>
 
-        <section class="service">
+        <!-- <section class="service">
           <h3 class="h3 service-title">What I'm doing</h3>
           <ul class="service-list">
             <li class="service-item">
@@ -144,208 +149,247 @@
               </div>
             </li>
           </ul>
-        </section>
+        </section> -->
 
-        <section class="tech-stack-section">
-          <h3 class="h3 article-title">Tech Stack</h3>
-          <div class="tech-category">
-            <h4 class="tech-category-title">Machine Learning & Data Science</h4>
-            <div class="scrolling-wrapper">
-              <button class="scroll-btn prev" data-scroll-btn="prev" aria-label="Previous"><</button>
-              <ul class="clients-list has-scrollbar">
-                <li class="clients-item"><a href="#"><img src="./assets/images/python.png" alt="Python"></a></li>
-                <li class="clients-item"><a href="#"><img src="./assets/images/pytorch.png" alt="PyTorch"></a></li>
-                <li class="clients-item"><a href="#"><img src="./assets/images/scikitlearn.svg" alt="Scikit-Learn" class="logo-scikitlearn"></a></li>
-                <li class="clients-item"><a href="#"><img src="./assets/images/pandas.png" alt="Pandas"></a></li>
-                <li class="clients-item"><a href="#"><img src="./assets/images/numpy.png" alt="NumPy"></a></li>
-                <li class="clients-item"><a href="#"><img src="./assets/images/spacy.png" alt="Spacy"></a></li>
-                <li class="clients-item"><a href="#"><img src="./assets/images/matplotlib.png" alt="Matplotlib"></a></li>
-                <li class="clients-item"><a href="#"><img src="./assets/images/seaborn.png" alt="Seaborn"></a></li>
-              </ul>
-              <button class="scroll-btn next" data-scroll-btn="next" aria-label="Next">></button>
-            </div>
-          </div>
-          <div class="tech-category">
-            <h4 class="tech-category-title">Generative AI</h4>
-            <div class="scrolling-wrapper">
-              <button class="scroll-btn prev" data-scroll-btn="prev" aria-label="Previous"><</button>
-              <ul class="clients-list has-scrollbar">
-                <li class="clients-item"><a href="#"><img src="./assets/images/huggingface.png" alt="Hugging Face"></a></li>
-                <li class="clients-item"><a href="#"><img src="./assets/images/langchain.png" alt="LangChain"></a></li>
-                <li class="clients-item"><a href="#"><img src="./assets/images/ollama.png" alt="Ollama"></a></li>
-                <li class="clients-item"><a href="#"><img src="./assets/images/mistral.png" alt="Mistral AI"></a></li>
-                <li class="clients-item"><a href="#"><img src="./assets/images/chatgpt.png" alt="ChatGPT"></a></li>
-                <li class="clients-item"><a href="#"><img src="./assets/images/claude.png" alt="Claude"></a></li>
-                <li class="clients-item"><a href="#"><img src="./assets/images/gemini.png" alt="Gemini"></a></li>
-                <li class="clients-item"><a href="#"><img src="./assets/images/chroma.png" alt="Chroma DB"></a></li>
-              </ul>
-              <button class="scroll-btn next" data-scroll-btn="next" aria-label="Next">></button>
-            </div>
-          </div>
-          <div class="tech-category">
-            <h4 class="tech-category-title">Backend & Deployment</h4>
-            <div class="scrolling-wrapper">
-              <button class="scroll-btn prev" data-scroll-btn="prev" aria-label="Previous"><</button>
-              <ul class="clients-list has-scrollbar">
-                <li class="clients-item"><a href="#"><img src="./assets/images/streamlit.png" alt="Streamlit"></a></li>
-                <li class="clients-item"><a href="#"><img src="./assets/images/gradio.png" alt="Gradio"></a></li>
-                <li class="clients-item"><a href="#"><img src="./assets/images/onnx.png" alt="ONNX"></a></li>
-                <li class="clients-item"><a href="#"><img src="./assets/images/fastapi.png" alt="FastAPI"></a></li>
-                <li class="clients-item"><a href="#"><img src="./assets/images/flask.png" alt="Flask"></a></li>
-              </ul>
-              <button class="scroll-btn next" data-scroll-btn="next" aria-label="Next">></button>
-            </div>
-          </div>
-          <div class="tech-category">
-            <h4 class="tech-category-title">Database & Tools</h4>
-            <div class="scrolling-wrapper">
-              <button class="scroll-btn prev" data-scroll-btn="prev" aria-label="Previous"><</button>
-              <ul class="clients-list has-scrollbar">
-                <li class="clients-item"><a href="#"><img src="./assets/images/mysql.svg" alt="MySQL"></a></li>
-                <li class="clients-item"><a href="#"><img src="./assets/images/postgres.png" alt="PostgreSQL"></a></li>
-                <li class="clients-item"><a href="#"><img src="./assets/images/mongodb.png" alt="MongoDB" class="rounded-logo"></a></li>
-                <li class="clients-item"><a href="#"><img src="./assets/images/docker.png" alt="Docker"></a></li>
-                <li class="clients-item"><a href="#"><img src="./assets/images/git.png" alt="Git"></a></li>
-              </ul>
-              <button class="scroll-btn next" data-scroll-btn="next" aria-label="Next">></button>
-            </div>
-          </div>
-        </section>
-      </article>
+<section class="tech-stack-section">
+  <h3 class="h3 article-title">Tech Stack</h3>
+  <div class="tech-category">
+    <h4 class="tech-category-title">Machine Learning & Data Science</h4>
+    <div class="scrolling-wrapper">
+      <button class="scroll-btn prev" data-scroll-btn="prev" aria-label="Previous"><</button>
+      <ul class="clients-list has-scrollbar">
+        <li class="clients-item"><a href="https://www.python.org/" target="_blank" title="Python"><img src="./assets/images/python.png" alt="Python"></a></li>
+        <li class="clients-item"><a href="https://pytorch.org/" target="_blank" title="PyTorch"><img src="./assets/images/pytorch.png" alt="PyTorch"></a></li>
+        <li class="clients-item"><a href="https://scikit-learn.org/" target="_blank" title="Scikit-Learn"><img src="./assets/images/scikitlearn.svg" alt="Scikit-Learn" class="logo-scikitlearn"></a></li>
+        <li class="clients-item"><a href="https://pandas.pydata.org/" target="_blank" title="Pandas"><img src="./assets/images/pandas.png" alt="Pandas"></a></li>
+        <li class="clients-item"><a href="https://numpy.org/" target="_blank" title="NumPy"><img src="./assets/images/numpy.png" alt="NumPy"></a></li>
+        <li class="clients-item"><a href="https://spacy.io/" target="_blank" title="Spacy"><img src="./assets/images/spacy.png" alt="Spacy"></a></li>
+        <li class="clients-item"><a href="https://matplotlib.org/" target="_blank" title="Matplotlib"><img src="./assets/images/matplotlib.png" alt="Matplotlib"></a></li>
+        <li class="clients-item"><a href="https://seaborn.pydata.org/" target="_blank" title="Seaborn"><img src="./assets/images/seaborn.png" alt="Seaborn"></a></li>
+      </ul>
+      <button class="scroll-btn next" data-scroll-btn="next" aria-label="Next">></button>
+    </div>
+  </div>
+  <div class="tech-category">
+    <h4 class="tech-category-title">Generative AI</h4>
+    <div class="scrolling-wrapper">
+      <button class="scroll-btn prev" data-scroll-btn="prev" aria-label="Previous"><</button>
+      <ul class="clients-list has-scrollbar">
+        <li class="clients-item"><a href="https://huggingface.co/" target="_blank" title="Hugging Face"><img src="./assets/images/huggingface.png" alt="Hugging Face"></a></li>
+        <li class="clients-item"><a href="https://www.langchain.com/" target="_blank" title="LangChain"><img src="./assets/images/langchain.png" alt="LangChain"></a></li>
+        <li class="clients-item"><a href="https://ollama.com/" target="_blank" title="Ollama"><img src="./assets/images/ollama.png" alt="Ollama"></a></li>
+        <li class="clients-item"><a href="https://mistral.ai/" target="_blank" title="Mistral AI"><img src="./assets/images/mistral.png" alt="Mistral AI"></a></li>
+        <li class="clients-item"><a href="https://openai.com/chatgpt" target="_blank" title="ChatGPT"><img src="./assets/images/chatgpt.png" alt="ChatGPT"></a></li>
+        <li class="clients-item"><a href="https://www.anthropic.com/claude" target="_blank" title="Claude"><img src="./assets/images/claude.png" alt="Claude"></a></li>
+        <li class="clients-item"><a href="https://gemini.google.com/" target="_blank" title="Gemini"><img src="./assets/images/gemini.png" alt="Gemini"></a></li>
+        <li class="clients-item"><a href="https://www.trychroma.com/" target="_blank" title="Chroma DB"><img src="./assets/images/chroma.png" alt="Chroma DB"></a></li>
+      </ul>
+      <button class="scroll-btn next" data-scroll-btn="next" aria-label="Next">></button>
+    </div>
+  </div>
+  <div class="tech-category">
+    <h4 class="tech-category-title">Backend & Deployment</h4>
+    <div class="scrolling-wrapper">
+      <button class="scroll-btn prev" data-scroll-btn="prev" aria-label="Previous"><</button> <ul class="clients-list has-scrollbar">
+          <li class="clients-item"><a href="https://fastapi.tiangolo.com/" target="_blank" title="FastAPI"><img src="./assets/images/fastapi.png" alt="FastAPI"></a></li>
+          <li class="clients-item"><a href="https://flask.palletsprojects.com/" target="_blank" title="Flask"><img src="./assets/images/flask.png" alt="Flask"></a></li>
+          <li class="clients-item"><a href="https://onnx.ai/" target="_blank" title="ONNX"><img src="./assets/images/onnx.png" alt="ONNX"></a></li>
+        <li class="clients-item"><a href="https://streamlit.io/" target="_blank" title="Streamlit"><img src="./assets/images/streamlit.png" alt="Streamlit"></a></li>
+        <li class="clients-item"><a href="https://www.gradio.app/" target="_blank" title="Gradio"><img src="./assets/images/gradio.png" alt="Gradio"></a></li>
+      </ul>
+      <button class="scroll-btn next" data-scroll-btn="next" aria-label="Next">></button>
+    </div>
+  </div>
+  <div class="tech-category">
+    <h4 class="tech-category-title">Database & Tools</h4>
+    <div class="scrolling-wrapper">
+      <button class="scroll-btn prev" data-scroll-btn="prev" aria-label="Previous"><</button>
+      <ul class="clients-list has-scrollbar">
+        <li class="clients-item"><a href="https://www.mysql.com/" target="_blank" title="MySQL"><img src="./assets/images/mysql.svg" alt="MySQL"></a></li>
+        <li class="clients-item"><a href="https://www.postgresql.org/" target="_blank" title="PostgreSQL"><img src="./assets/images/postgres.png" alt="PostgreSQL"></a></li>
+        <li class="clients-item"><a href="https://www.mongodb.com/" target="_blank" title="MongoDB"><img src="./assets/images/mongodb.png" alt="MongoDB" class="rounded-logo"></a></li>
+        <li class="clients-item"><a href="https://www.docker.com/" target="_blank" title="Docker"><img src="./assets/images/docker.png" alt="Docker"></a></li>
+        <li class="clients-item"><a href="https://git-scm.com/" target="_blank" title="Git"><img src="./assets/images/git.png" alt="Git"></a></li>
+      </ul>
+      <button class="scroll-btn next" data-scroll-btn="next" aria-label="Next">></button>
+    </div>
+  </div>
+</section>
+</article>
+
 
       <article class="portfolio" data-page="portfolio">
-        <header>
-          <h2 class="h2 article-title">Portfolio</h2>
-        </header>
-        <section class="projects">
-          <ul class="filter-list">
-            <li class="filter-item">
-              <button class="active" data-filter-btn>All</button>
-            </li>
-            <li class="filter-item">
-              <button data-filter-btn>Machine Learning</button>
-            </li>
-            <li class="filter-item">
-              <button data-filter-btn>Gen AI</button>
-            </li>
-            <li class="filter-item">
-              <button data-filter-btn>NLP</button>
-            </li>
-            <li class="filter-item">
-              <button data-filter-btn>Computer Vision</button>
-            </li>
-          </ul>
-          <div class="filter-select-box">
-            <button class="filter-select" data-select>
-              <div class="select-value" data-selecct-value>Select category</div>
-              <div class="select-icon">
-                <ion-icon name="chevron-down"></ion-icon>
-              </div>
-            </button>
-            <ul class="select-list">
-              <li class="select-item"><button data-select-item>All</button></li>
-              <li class="select-item"><button data-select-item>Machine Learning</button></li>
-              <li class="select-item"><button data-select-item>Gen AI</button></li>
-              <li class="select-item"><button data-select-item>NLP</button></li>
-              <li class="select-item"><button data-select-item>Computer Vision</button></li>
-            </ul>
+  <header>
+    <h2 class="h2 article-title">Portfolio</h2>
+  </header>
+
+  <section class="projects">
+    <ul class="filter-list">
+      <li class="filter-item">
+        <button class="active" data-filter-btn>Resume Projects</button>
+      </li>
+      <li class="filter-item">
+        <button data-filter-btn>Gen AI</button>
+      </li>
+      <li class="filter-item">
+        <button data-filter-btn>NLP</button>
+      </li>
+      <li class="filter-item">
+        <button data-filter-btn>Computer Vision</button>
+      </li>
+    </ul>
+    <div class="filter-select-box">
+      <button class="filter-select" data-select>
+        <div class="select-value" data-selecct-value>Select category</div>
+        <div class="select-icon">
+          <ion-icon name="chevron-down"></ion-icon>
+        </div>
+      </button>
+      <ul class="select-list">
+        <li class="select-item"><button data-select-item>Resume Projects</button></li>
+        <li class="select-item"><button data-select-item>Gen AI</button></li>
+        <li class="select-item"><button data-select-item>NLP</button></li>
+        <li class="select-item"><button data-select-item>Computer Vision</button></li>
+      </ul>
+    </div>
+
+    <ul class="project-list">
+
+      <li class="project-item active" data-filter-item data-category="resume projects">
+        <div class="project-card">
+          <figure class="project-banner">
+            <img src="./assets/images/project-4.png" alt="AI Support Ticket Classifier">
+          </figure>
+          <div class="project-content">
+            <h3 class="project-title">Support Ticket Classifier</h3>
+            <p class="project-description">
+              Fine-tuned a RoBERTa model for multi-task classification of support ticket issue type and urgency.
+            </p>
           </div>
-          <ul class="project-list">
-            <li class="project-item active" data-filter-item data-category="machine learning">
-              <a href="#">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/project-1.jpg" alt="Asteroid Risk Prediction">
-                </figure>
-                <h3 class="project-title">Asteroid Risk Prediction</h3>
-                <p class="project-category">Machine Learning</p>
-              </a>
-            </li>
-            <li class="project-item active" data-filter-item data-category="gen ai">
-              <a href="#">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/project-2.png" alt="Quoteflow">
-                </figure>
-                <h3 class="project-title">Quoteflow</h3>
-                <p class="project-category">Gen AI</p>
-              </a>
-            </li>
-            <li class="project-item active" data-filter-item data-category="gen ai">
-              <a href="#">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/project-3.jpg" alt="Cold Email Automation">
-                </figure>
-                <h3 class="project-title">Cold Email Automation</h3>
-                <p class="project-category">Gen AI</p>
-              </a>
-            </li>
-            <li class="project-item active" data-filter-item data-category="nlp">
-              <a href="#">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/project-4.png" alt="AI Support Ticket Classifier">
-                </figure>
-                <h3 class="project-title">AI Support Ticket Classifier</h3>
-                <p class="project-category">NLP</p>
-              </a>
-            </li>
-          </ul>
-        </section>
-      </article>
+          <a href="https://github.com/KS-Mohit/your-repo" target="_blank" class="project-link">
+            <span>View on GitHub</span>
+          </a>
+        </div>
+      </li>
+
+      <li class="project-item active" data-filter-item data-category="gen ai">
+        <div class="project-card">
+          <figure class="project-banner">
+            <img src="./assets/images/project-2.png" alt="Quoteflow">
+          </figure>
+          <div class="project-content">
+            <h3 class="project-title">Quoteflow</h3>
+            <p class="project-description">
+              Add your short project description here.
+            </p>
+          </div>
+          <a href="https://github.com/KS-Mohit/your-repo" target="_blank" class="project-link">
+            <span>View on GitHub</span>
+          </a>
+        </div>
+      </li>
+
+      <li class="project-item active" data-filter-item data-category="gen ai">
+        <div class="project-card">
+          <figure class="project-banner">
+            <img src="./assets/images/project-3.jpg" alt="Cold Email Automation">
+          </figure>
+          <div class="project-content">
+            <h3 class="project-title">Cold Email Automation</h3>
+            <p class="project-description">
+              Add your short project description here.
+            </p>
+          </div>
+          <a href="https://github.com/KS-Mohit/your-repo" target="_blank" class="project-link">
+            <span>View on GitHub</span>
+          </a>
+        </div>
+      </li>
+
+      <li class="project-item active" data-filter-item data-category="nlp">
+        <div class="project-card">
+          <figure class="project-banner">
+            <img src="./assets/images/project-1.jpg" alt="Asteroid Risk Prediction">
+          </figure>
+          <div class="project-content">
+            <h3 class="project-title">Asteroid Risk Prediction</h3>
+            <p class="project-description">
+              Add your short project description here.
+            </p>
+          </div>
+          <a href="https://github.com/KS-Mohit/your-repo" target="_blank" class="project-link">
+            <span>View on GitHub</span>
+          </a>
+        </div>
+      </li>
+
+      <li class="project-item active" data-filter-item data-category="computer vision">
+        <div class="project-card">
+          <figure class="project-banner">
+            <img src="https://placehold.co/400x300/222222/eeeeee?text=Object+Detection" alt="Object Detection">
+          </figure>
+          <div class="project-content">
+            <h3 class="project-title">Object Detection</h3>
+            <p class="project-description">
+              Add a short project description here.
+            </p>
+          </div>
+          <a href="https://github.com/KS-Mohit/your-repo" target="_blank" class="project-link">
+            <span>View on GitHub</span>
+          </a>
+        </div>
+      </li>
+
+    </ul>
+  </section>
+</article>
 
       <article class="resume" data-page="resume">
-        <header>
-          <h2 class="h2 article-title">Resume</h2>
-        </header>
-        <section class="timeline">
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
-            </div>
-            <h3 class="h3">Education</h3>
-          </div>
-          <ol class="timeline-list">
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">SRM University</h4>
-              <span>2021 — 2025</span>
-              <p class="timeline-text">Bachelor of Technology in Computer Science and Engineering.</p>
-            </li>
-          </ol>
-        </section>
-        <section class="timeline">
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
-            </div>
-            <h3 class="h3">Experience</h3>
-          </div>
-          <ol class="timeline-list">
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Machine Learning Intern</h4>
-              <span>May 2025 — July 2025</span>
-              <p class="timeline-text">
-                Fine-tuned a RoBERTa transformer for multi-task classification of support ticket issue type and urgency. Engineered a FastAPI backend to serve the model, reducing inference latency by 70% by exporting the PyTorch model to the ONNX format. Implemented a rule-based entity extractor for date recognition and keyword matching for product and complaint identification.
-              </p>
-            </li>
-          </ol>
-        </section>
-        <a href="./assets/files/Mohit_Resume.pdf" class="form-btn" download style="margin: 40px auto 0;">
-          <ion-icon name="cloud-download-outline"></ion-icon>
-          <span>Download Resume</span>
-        </a>
-      </article>
+  <header>
+    <h2 class="h2 article-title">Resume</h2>
+  </header>
 
-      <article class="blog" data-page="blog">
+  <section class="timeline">
+    <div class="title-wrapper">
+      <div class="icon-box">
+        <ion-icon name="book-outline"></ion-icon>
+      </div>
+      <h3 class="h3">Experience</h3>
+    </div>
+    <ol class="timeline-list">
+      <li class="timeline-item">
+        <h4 class="h4 timeline-item-title">Machine Learning Intern</h4>
+        <span>May 2025 — July 2025</span>
+        <p class="timeline-text">
+          Fine-tuned a RoBERTa transformer for multi-task classification of support ticket issue type and urgency. Engineered a FastAPI backend to serve the model, reducing inference latency by 70% by exporting the PyTorch model to the ONNX format. Implemented a rule-based entity extractor for date recognition and keyword matching for product and complaint identification.
+        </p>
+      </li>
+    </ol>
+  </section>
+
+  <section class="timeline">
+    <div class="title-wrapper">
+      <div class="icon-box">
+        <ion-icon name="book-outline"></ion-icon>
+      </div>
+      <h3 class="h3">Education</h3>
+    </div>
+    <ol class="timeline-list">
+      <li class="timeline-item">
+        <h4 class="h4 timeline-item-title">SRM University</h4>
+        <span>2021 — 2025</span>
+        <p class="timeline-text">Bachelor of Technology in Computer Science and Engineering.</p>
+      </li>
+    </ol>
+  </section>
+  
+  <a href="./assets/files/Mohit_Resume.pdf" class="form-btn" download style="margin: 40px auto 0;">
+    <ion-icon name="cloud-download-outline"></ion-icon>
+    <span>Download Resume</span>
+  </a>
+</article>
+
+      <!-- <article class="blog" data-page="blog">
         <header>
           <h2 class="h2 article-title">Blog</h2>
         </header>
@@ -369,32 +413,39 @@
             </li>
           </ul>
         </section>
-      </article>
+      </article> -->
 
 <article class="contact" data-page="contact">
 
-  <header>
-    <h2 class="h2 article-title">Contact</h2>
-  </header>
+  <section>
+    <header>
+      <h2 class="h2 article-title">My Visitors</h2>
+    </header>
 
-  <section class="contact-form">
+    <div class="visitor-map">
+    
+    </div>
+  </section>
 
-    <form action="https://formsubmit.co/5102mohit@gmail.com" method="POST" class="form" data-form>
 
-      <div class="input-wrapper">
-        <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
-        <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
-      </div>
+  <section>
+    <header>
+      <h2 class="h2 article-title">Contact Me</h2>
+    </header>
 
-      <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
-
-      <button class="form-btn" type="submit" data-form-btn>
-        <ion-icon name="paper-plane"></ion-icon>
-        <span>Send Message</span>
-      </button>
-
-    </form>
-
+    <div class="contact-form">
+      <form action="https://formsubmit.co/5102mohit@gmail.com" method="POST" class="form" data-form>
+        <div class="input-wrapper">
+          <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
+          <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
+        </div>
+        <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+        <button class="form-btn" type="submit" data-form-btn>
+          <ion-icon name="paper-plane"></ion-icon>
+          <span>Send Message</span>
+        </button>
+      </form>
+    </div>
   </section>
 
 </article>

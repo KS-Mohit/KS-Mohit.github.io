@@ -5,40 +5,16 @@
    */
 
   /* gradient */
+  --bg-gradient-onyx: linear-gradient( to bottom right, hsl(240, 1%, 25%) 3%, hsl(0, 0%, 19%) 97% );
+  --bg-gradient-jet: linear-gradient( to bottom right, hsla(240, 1%, 18%, 0.251) 0%, hsla(240, 2%, 11%, 0) 100% ), hsl(240, 2%, 13%);
+  --border-gradient-onyx: linear-gradient( to bottom right, hsl(0, 0%, 25%) 0%, hsla(0, 0%, 25%, 0) 50% );
 
-  --bg-gradient-onyx: linear-gradient(
-    to bottom right, 
-    hsl(240, 1%, 25%) 3%, 
-    hsl(0, 0%, 19%) 97%
-  );
-  --bg-gradient-jet: linear-gradient(
-    to bottom right, 
-    hsla(240, 1%, 18%, 0.251) 0%, 
-    hsla(240, 2%, 11%, 0) 100%
-  ), hsl(240, 2%, 13%);
-  --bg-gradient-yellow-1: linear-gradient(
-    to bottom right, 
-    hsl(45, 100%, 71%) 0%, 
-    hsla(36, 100%, 69%, 0) 50%
-  );
-  --bg-gradient-yellow-2: linear-gradient(
-    135deg, 
-    hsla(45, 100%, 71%, 0.251) 0%, 
-    hsla(35, 100%, 68%, 0) 59.86%
-  ), hsl(240, 2%, 13%);
-  --border-gradient-onyx: linear-gradient(
-    to bottom right, 
-    hsl(0, 0%, 25%) 0%, 
-    hsla(0, 0%, 25%, 0) 50%
-  );
-  --text-gradient-yellow: linear-gradient(
-    to right, 
-    hsl(45, 100%, 72%), 
-    hsl(35, 100%, 68%)
-  );
+  /* --- NEW ACCENT GRADIENTS (SILVER) --- */
+  --bg-gradient-accent-1: linear-gradient( to bottom right, hsl(0, 0%, 85%) 0%, hsla(0, 0%, 75%, 0) 50% );
+  --bg-gradient-accent-2: linear-gradient( 135deg, hsla(0, 0%, 85%, 0.25) 0%, hsla(0, 0%, 75%, 0) 60% ), hsl(240, 2%, 13%);
+  --text-gradient-accent: linear-gradient( to right, hsl(0, 0%, 98%), hsl(0, 0%, 75%) );
 
   /* solid */
-
   --jet: hsl(0, 0%, 22%);
   --onyx: hsl(240, 1%, 17%);
   --eerie-black-1: hsl(240, 2%, 13%);
@@ -46,20 +22,18 @@
   --smoky-black: hsl(0, 0%, 7%);
   --white-1: hsl(0, 0%, 100%);
   --white-2: hsl(0, 0%, 98%);
-  --orange-yellow-crayola: hsl(45, 100%, 72%);
-  --vegas-gold: hsl(45, 54%, 58%);
   --light-gray: hsl(0, 0%, 84%);
   --light-gray-70: hsla(0, 0%, 84%, 0.7);
   --bittersweet-shimmer: hsl(0, 43%, 51%);
 
+  /* --- NEW ACCENT COLORS (SILVER) --- */
+  --orange-yellow-crayola: hsl(0, 0%, 85%);
+  --vegas-gold: hsl(0, 0%, 70%);
+
   /**
-   * typography
+   * typography, shadow, transition
    */
-
-  /* font-family */
   --ff-poppins: 'Poppins', sans-serif;
-
-  /* font-size */
   --fs-1: 24px;
   --fs-2: 18px;
   --fs-3: 17px;
@@ -68,35 +42,18 @@
   --fs-6: 14px;
   --fs-7: 13px;
   --fs-8: 11px;
-
-  /* font-weight */
   --fw-300: 300;
   --fw-400: 400;
   --fw-500: 500;
   --fw-600: 600;
-
-  /**
-   * shadow
-   */
-  
   --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.25);
   --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.25);
   --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.25);
   --shadow-4: 0 25px 50px hsla(0, 0%, 0%, 0.15);
   --shadow-5: 0 24px 80px hsla(0, 0%, 0%, 0.25);
-
-  /**
-   * transition
-   */
-
   --transition-1: 0.25s ease;
   --transition-2: 0.5s ease-in-out;
-
 }
-
-
-
-
 
 /*-----------------------------------*\
   #RESET
@@ -234,7 +191,7 @@ article.active {
   left: 0;
   width: 30px;
   height: 3px;
-  background: var(--text-gradient-yellow);
+  background: var(--text-gradient-accent);
   border-radius: 3px;
 }
 
@@ -809,7 +766,7 @@ main {
   left: -33px;
   height: 6px;
   width: 6px;
-  background: var(--text-gradient-yellow);
+  background: var(--text-gradient-accent);
   border-radius: 50%;
   box-shadow: 0 0 0 4px var(--jet);
 }
@@ -2001,3 +1958,132 @@ textarea.form-input::-webkit-resizer { display: none; }
   max-height: 100%;
 }
 
+.visitor-map {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+/*
+ * Increase the size of the ClustrMaps Globe
+ */
+.visitor-map > div {
+  /* This scales the widget to be 25% larger. Adjust the value as needed. */
+  transform: scale(1.25);
+}
+
+/* --- Style for Active/Visible Portfolio Projects --- */
+.project-item.active {
+  /* Adds a subtle glow using your accent color */
+  box-shadow: 0 0 15px hsla(48, 89%, 65%, 0.15);
+  
+  /* You can optionally make them slightly larger */
+  /* transform: scale(1.02); */
+}
+
+/* --- Style for the Active Portfolio Filter Button --- */
+.filter-item button.active {
+  /* This adds a glow effect to the text */
+  text-shadow: 0 0 8px hsla(48, 89%, 65%, 0.5);
+}
+
+/* --- Corrected Portfolio Project Card Styles --- */
+
+.project-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+.project-item {
+  border-radius: 16px; 
+}
+
+.project-card {
+  height: 100%;
+  background: var(--jet);
+  border-radius: 16px;
+  box-shadow: var(--shadow-2);
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition-1);
+}
+
+.project-item.active .project-card {
+  box-shadow: 0 0 15px hsla(48, 89%, 65%, 0.15);
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-banner {
+  width: 100%;
+  height: 160px;
+}
+
+.project-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px 16px 0 0;
+}
+
+.project-content {
+  padding: 25px;
+  flex-grow: 1;
+  text-align: left;
+}
+
+/* This is the main fix */
+.project-title,
+.project-description {
+  margin: 0; /* Resets default browser margins */
+  padding: 0; /* Resets default browser padding */
+}
+
+/* Use a more specific selector to ensure these rules apply */
+.project-card .project-title {
+  color: var(--white-2);
+  font-size: var(--fs-5); /* 15px */
+  font-weight: var(--fw-600);
+  margin-bottom: 15px;
+}
+
+/* Use a more specific selector here as well */
+.project-card .project-description {
+  color: var(--light-gray);
+  font-size: var(--fs-7); /* 13px */
+  font-weight: var(--fw-300);
+  line-height: 1.6;
+}
+
+.project-link {
+  color: var(--orange-yellow-crayola);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-500);
+  padding: 20px;
+  margin-top: auto;
+  text-align: center;
+  border-top: 1px solid var(--onyx);
+  transition: var(--transition-1);
+}
+
+.project-link:hover {
+  background: var(--onyx);
+  border-radius: 0 0 16px 16px;
+}
+
+@media (min-width: 580px) {
+  .project-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .project-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

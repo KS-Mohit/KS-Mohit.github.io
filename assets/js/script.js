@@ -140,3 +140,32 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+// --- Conditionally Load ClustrMaps on Live Site Only ---
+
+// This is your live website's address
+const liveHostname = 'ks-mohit.github.io';
+
+// Check if the current page is the live site
+if (window.location.hostname === liveHostname) {
+  // Create a new script element
+  const clustrMapScript = document.createElement('script');
+
+  // Set the script's attributes to match the one from ClustrMaps
+  clustrMapScript.type = 'text/javascript';
+  clustrMapScript.id = 'clustrmaps';
+  clustrMapScript.src = '//clustrmaps.com/map_v2.js?d=qbshG7xcbGwHrIzZKOevBIletzGzMGhwLU-cjmiVwn8&cl=ffffff&w=a';
+
+  // Find the empty .visitor-map div and add the script inside it
+  document.querySelector('.visitor-map').appendChild(clustrMapScript);
+}
+
+// --- Run Filter on Page Load ---
+window.addEventListener("load", () => {
+  // Find the button that is set to 'active' in the HTML
+  const initialFilterBtn = document.querySelector(".filter-list .active");
+  if (initialFilterBtn) {
+    // Run the filter function with that button's category
+    filterFunc(initialFilterBtn.innerText.toLowerCase());
+  }
+});
