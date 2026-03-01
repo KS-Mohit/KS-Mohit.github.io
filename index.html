@@ -1,513 +1,370 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mohit's Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mohit Kumar</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
-  <link rel="stylesheet" href="./assets/css/style.css">
+    :root {
+      --bg: #f5f2ed;
+      --text: #1a1a1a;
+      --muted: #888880;
+      --nav-active: #1a1a1a;
+      --border: rgba(0,0,0,0.08);
+    }
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    body.dark {
+      --bg: #111110;
+      --text: #e8e4dc;
+      --muted: #666660;
+      --nav-active: #e8e4dc;
+      --border: rgba(255,255,255,0.08);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'EB Garamond', Georgia, serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 19px;
+      line-height: 1.7;
+      transition: background 0.3s, color 0.3s;
+      min-height: 100vh;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 60px;
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      z-index: 100;
+      transition: background 0.3s;
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      font-size: 20px;
+      letter-spacing: 0.08em;
+      color: var(--text);
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-btn {
+      font-family: 'EB Garamond', serif;
+      font-size: 17px;
+      color: var(--muted);
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: color 0.2s;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-btn:hover, .nav-btn.active { color: var(--nav-active); }
+    .nav-btn:hover { text-decoration: underline; text-underline-offset: 3px; }
+    .nav-logo:hover { opacity: 0.6; }
+
+    .page { display: none; }
+    .page.active { display: block; animation: fadeIn 0.35s ease; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .content {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 80px 60px 120px;
+    }
+
+    .home-header {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      margin-bottom: 52px;
+    }
+
+    .avatar {
+      width: 110px;
+      height: 110px;
+      border-radius: 12px;
+      background: var(--border);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 12px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .avatar img { width: 100%; height: 100%; object-fit: cover; }
+
+    .home-name-block h1 {
+      font-family: 'EB Garamond', serif;
+      font-weight: 400;
+      font-size: 42px;
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+
+    .social-links { display: flex; gap: 20px; align-items: center; }
+
+    .social-links a, .social-links button {
+      font-family: 'EB Garamond', serif;
+      font-size: 16px;
+      color: var(--muted);
+      text-decoration: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: color 0.2s;
+    }
+
+    .social-links a:hover, .social-links button:hover { color: var(--text); }
+
+    .bio p {
+      color: var(--text);
+      margin-bottom: 24px;
+      font-size: 19px;
+    }
+
+    .bio p:last-of-type { margin-bottom: 0; }
+
+    .page-title {
+      font-family: 'EB Garamond', serif;
+      font-weight: 400;
+      font-size: 52px;
+      margin-bottom: 64px;
+    }
+
+    .work-entries { display: flex; flex-direction: column; }
+
+    .work-entry {
+      padding: 36px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .work-entry:last-child { border-bottom: 1px solid var(--border); }
+
+    .work-entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 6px;
+    }
+
+    .work-company { font-weight: 500; font-size: 19px; }
+    .work-dates { font-size: 16px; color: var(--muted); }
+    .work-role { font-size: 17px; color: var(--muted); margin-bottom: 14px; }
+    .work-desc { font-size: 18px; color: var(--text); line-height: 1.65; }
+
+    .project-entries { display: flex; flex-direction: column; }
+
+    .project-entry {
+      padding: 24px 0;
+      border-top: 1px solid var(--border);
+      text-decoration: none;
+      color: var(--text);
+      display: block;
+    }
+
+    .project-entry:last-child { border-bottom: 1px solid var(--border); }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 24px;
+      margin-bottom: 6px;
+    }
+
+    .project-title { font-size: 19px; transition: color 0.2s; }
+    .project-entry:hover .project-title { color: var(--muted); }
+    .project-date { font-size: 15px; color: var(--muted); white-space: nowrap; flex-shrink: 0; }
+    .project-desc { font-size: 16px; color: var(--muted); line-height: 1.5; }
+
+    @media (max-width: 640px) {
+      nav { padding: 20px 24px; }
+      .nav-links { gap: 20px; }
+      .content { padding: 48px 24px 80px; }
+      .home-header { flex-direction: column; align-items: flex-start; gap: 20px; }
+      .page-title { font-size: 40px; }
+      .work-entry-header { flex-direction: column; gap: 2px; }
+    }
+  </style>
 </head>
-
 <body>
 
-  <main>
+  <nav>
+    <button class="nav-logo" id="logo-btn">MK</button>
+    <ul class="nav-links">
+      <li><button class="nav-btn" id="btn-work">Work</button></li>
+      <li><button class="nav-btn" id="btn-projects">Projects</button></li>
+      <li><button class="nav-btn" id="btn-blog">Blog</button></li>
+      <li><button class="nav-btn" id="btn-dark">Dark</button></li>
+    </ul>
+  </nav>
 
-<aside class="sidebar" data-sidebar>
+  <!-- HOME -->
+  <div id="page-home" class="page active">
+    <div class="content">
+      <div class="home-header">
+        <div class="avatar">
+          <img src="images/photo.jpg" alt="Mohit Kumar">
+        </div>
+        <div class="home-name-block">
+          <h1>Mohit Kumar</h1>
+          <div class="social-links">
+            <button id="email-btn">Email</button>
+            <a href="https://github.com/KS-Mohit" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://linkedin.com/in/" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+      </div>
 
-  <div class="sidebar-info">
-    <figure class="avatar-box">
-      <img src="./assets/images/my-avatar.png" alt="Mohit Kumar" width="80">
-    </figure>
-    <div class="info-content">
-      <h1 class="name" title="Mohit Kumar">Mohit Kumar</h1>
-      <p class="title">Software Engineer</p>
+      <div class="bio">
+        <p>I currently work as a Data Scientist at Blackcoffer, Delhi, where I build AI-powered systems, from multilingual audio extraction APIs to agentic recruiting pipelines that automate entire workflows end to end.</p>
+        <p>I have also worked on projects including a scalable knowledge graph pipeline using Neo4j and GPT-4o to structure 500+ unstructured documents, and a large-scale Selenium scraper that aggregated over 90,000 earnings call transcripts for downstream NLP and financial analysis.</p>
+        <p>I graduated from SRM University with a B.Tech in Computer Science in 2025. Outside of work, I build things, a legal document summarizer fine-tuned on TinyLlama, a multimodal music recommender that reads the vibe from images, and whatever else feels interesting to explore.</p>
+      </div>
     </div>
-    <button class="info_more-btn" data-sidebar-btn>
-      <span>Show Contacts</span>
-      <ion-icon name="chevron-down"></ion-icon>
-    </button>
   </div>
 
-  <div class="sidebar-info_more">
-    <div class="separator"></div>
-    <ul class="contacts-list">
+  <!-- WORK -->
+  <div id="page-work" class="page">
+    <div class="content">
+      <h2 class="page-title">Work</h2>
+      <div class="work-entries">
 
-      <li class="contact-item">
-        <div class="icon-box">
-          <ion-icon name="location-outline"></ion-icon>
+        <div class="work-entry">
+          <div class="work-entry-header">
+            <span class="work-company">Blackcoffer</span>
+            <span class="work-dates">Aug 2025 – Present</span>
+          </div>
+          <div class="work-role">Data Scientist · Delhi, India</div>
+          <div class="work-desc">Led development of a multilingual audio advertisement extraction API with dynamic routing between AssemblyAI and Google STT, using GPT-5 for ad extraction, reducing transcription costs by 84%. Engineered an agentic recruiting system with Langflow that automates the full lifecycle of lead management, candidate outreach, and meeting scheduling, cutting recruiter workload by 70%. Orchestrated a multi-tool Langflow agent using MCP to integrate Zoho CRM and Salesmessage, Dockerized and deployed on Azure VM.</div>
         </div>
-        <div class="contact-info">
-          <p class="contact-title">Location</p>
-          <address>Delhi, India</address>
-        </div>
-      </li>
 
-      <li class="contact-item">
-        <div class="icon-box">
-          <ion-icon name="call-outline"></ion-icon>
+        <div class="work-entry">
+          <div class="work-entry-header">
+            <span class="work-company">Labmentix</span>
+            <span class="work-dates">May 2025 – Jul 2025</span>
+          </div>
+          <div class="work-role">Machine Learning Engineer · Bangalore, India</div>
+          <div class="work-desc">Architected a scalable knowledge graph pipeline using Neo4j and GPT-4o to ingest and structure 500+ unstructured documents into a dual-layer semantic graph enabling graph-based retrieval. Implemented a GraphOps-based LLM extraction pipeline with validation and execution agents. Built a large-scale Selenium data ingestion pipeline to scrape 90,000+ earnings call transcripts from Seeking Alpha for downstream NLP and financial analysis.</div>
         </div>
-        <div class="contact-info">
-          <p class="contact-title">Phone</p>
-          <a href="tel:+918374106416" class="contact-link">+91-8374106416</a>
-        </div>
-      </li>
 
-      <li class="contact-item">
-        <div class="icon-box">
-          <ion-icon name="mail-outline"></ion-icon>
-        </div>
-        <div class="contact-info">
-          <p class="contact-title">Email</p>
-          <a href="mailto:5102mohit@gmail.com" class="contact-link">5102mohit@gmail.com</a>
-        </div>
-      </li>
-      
-    </ul>
-    <div class="separator"></div>
-    <ul class="social-list">
-      <li class="social-item">
-        <a href="https://github.com/KS-Mohit" class="social-link" target="_blank">
-          <ion-icon name="logo-github"></ion-icon>
+      </div>
+    </div>
+  </div>
+
+  <!-- BLOG -->
+  <div id="page-blog" class="page">
+    <div class="content">
+      <h2 class="page-title">Blog</h2>
+      <p style="color:var(--muted);font-size:17px;">Posts coming soon.</p>
+    </div>
+  </div>
+
+  <!-- PROJECTS -->
+  <div id="page-projects" class="page">
+    <div class="content">
+      <h2 class="page-title">Projects</h2>
+      <div class="project-entries">
+
+        <a class="project-entry" href="https://github.com/KS-Mohit/Nomoji" target="_blank" rel="noopener">
+          <div class="project-header">
+            <span class="project-title">Nomoji</span>
+            <span class="project-date">2026</span>
+          </div>
+          <span class="project-desc">A vibecode cleanup tool that automatically removes emojis from your codebase.</span>
         </a>
-      </li>
-      <li class="social-item">
-        <a href="https://linkedin.com/in/ks-mohit" class="social-link" target="_blank">
-          <ion-icon name="logo-linkedin"></ion-icon>
+
+        <a class="project-entry" href="https://github.com/KS-Mohit/Chroma-Tune" target="_blank" rel="noopener">
+          <div class="project-header">
+            <span class="project-title">ChromaTune — Multimodal Music Recommender</span>
+            <span class="project-date">2025</span>
+          </div>
+          <span class="project-desc">A containerized multimodal RAG application that generates Spotify song recommendations by interpreting the vibe from user uploaded images and text descriptions.</span>
         </a>
-      </li>
-    </ul>
-  </div>
-  
-</aside>
 
-    <div class="main-content">
-
-      <nav class="navbar">
-        <ul class="navbar-list">
-          <li class="navbar-item">
-            <button class="navbar-link active" data-nav-link>About</button>
-          </li>
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Portfolio</button>
-          </li>
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Resume</button>
-          </li>
-          <!-- <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Blog</button>
-          </li> -->
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Contact</button>
-          </li>
-        </ul>
-      </nav>
-
-      <article class="about active" data-page="about">
-        <header>
-          <h2 class="h2 article-title">About me</h2>
-        </header>
-        <section class="about-text">
-          <p>
-            Hi, I'm Mohit Kumar. I like deep neural nets, generative models, and building intelligent systems that solve problems. I love exploring the world of AI and machine learning, from building automation tools to crafting creative, data-driven systems. I'm always curious about how things work under the hood, and I enjoy exploring new ideas, building projects, and learning new skills.
-          </p>
-        </section>
-
-        <!-- <section class="service">
-          <h3 class="h3 service-title">What I'm doing</h3>
-          <ul class="service-list">
-            <li class="service-item">
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">AI & Machine Learning</h4>
-                <p class="service-item-text">Fine-tuning advanced NLP models like RoBERTa and DistilBERT for multi-task classification and semantic retrieval.</p>
-              </div>
-            </li>
-            <li class="service-item">
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">End-to-End AI Solutions</h4>
-                <p class="service-item-text">Developing full RAG pipelines with LLMs like Mistral-7B and LLAMA 3 to build generative AI tools.</p>
-              </div>
-            </li>
-            <li class="service-item">
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Backend & API Development</h4>
-                <p class="service-item-text">Building and deploying low-latency FastAPI and Flask APIs to serve machine learning models.</p>
-              </div>
-            </li>
-            <li class="service-item">
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Data Science</h4>
-                <p class="service-item-text">Applying machine learning and robust data preprocessing pipelines to extract actionable insights from complex datasets.</p>
-              </div>
-            </li>
-          </ul>
-        </section> -->
-
-<section class="tech-stack-section">
-  <h3 class="h3 article-title">Tech Stack</h3>
-  <div class="tech-category">
-    <h4 class="tech-category-title">Machine Learning & Data Science</h4>
-    <div class="scrolling-wrapper">
-      <button class="scroll-btn prev" data-scroll-btn="prev" aria-label="Previous"><</button>
-      <ul class="clients-list has-scrollbar">
-        <li class="clients-item"><a href="https://www.python.org/" target="_blank" title="Python"><img src="./assets/images/python.png" alt="Python"></a></li>
-        <li class="clients-item"><a href="https://pytorch.org/" target="_blank" title="PyTorch"><img src="./assets/images/pytorch.png" alt="PyTorch"></a></li>
-        <li class="clients-item"><a href="https://scikit-learn.org/" target="_blank" title="Scikit-Learn"><img src="./assets/images/scikitlearn.svg" alt="Scikit-Learn" class="logo-scikitlearn"></a></li>
-        <li class="clients-item"><a href="https://pandas.pydata.org/" target="_blank" title="Pandas"><img src="./assets/images/pandas.png" alt="Pandas"></a></li>
-        <li class="clients-item"><a href="https://numpy.org/" target="_blank" title="NumPy"><img src="./assets/images/numpy.png" alt="NumPy"></a></li>
-        <li class="clients-item"><a href="https://spacy.io/" target="_blank" title="Spacy"><img src="./assets/images/spacy.png" alt="Spacy"></a></li>
-        <li class="clients-item"><a href="https://matplotlib.org/" target="_blank" title="Matplotlib"><img src="./assets/images/matplotlib.png" alt="Matplotlib"></a></li>
-        <li class="clients-item"><a href="https://seaborn.pydata.org/" target="_blank" title="Seaborn"><img src="./assets/images/seaborn.png" alt="Seaborn"></a></li>
-      </ul>
-      <button class="scroll-btn next" data-scroll-btn="next" aria-label="Next">></button>
-    </div>
-  </div>
-  <div class="tech-category">
-    <h4 class="tech-category-title">Generative AI</h4>
-    <div class="scrolling-wrapper">
-      <button class="scroll-btn prev" data-scroll-btn="prev" aria-label="Previous"></button>
-      <ul class="clients-list has-scrollbar">
-        <li class="clients-item"><a href="https://huggingface.co/" target="_blank" title="Hugging Face"><img src="./assets/images/huggingface.png" alt="Hugging Face"></a></li>
-        <li class="clients-item"><a href="https://www.langflow.org/" target="_blank" title="LangFlow"><img src="./assets/images/langflow.png" alt="LangFlow"></a></li>
-        <li class="clients-item"><a href="https://ollama.com/" target="_blank" title="Ollama"><img src="./assets/images/ollama.png" alt="Ollama"></a></li>
-        <li class="clients-item"><a href="https://mistral.ai/" target="_blank" title="Mistral AI"><img src="./assets/images/mistral.png" alt="Mistral AI"></a></li>
-        <li class="clients-item"><a href="https://openai.com/chatgpt" target="_blank" title="ChatGPT"><img src="./assets/images/chatgpt.png" alt="ChatGPT"></a></li>
-        <li class="clients-item"><a href="https://www.anthropic.com/claude" target="_blank" title="Claude"><img src="./assets/images/claude.png" alt="Claude"></a></li>
-        <li class="clients-item"><a href="https://gemini.google.com/" target="_blank" title="Gemini"><img src="./assets/images/gemini.png" alt="Gemini"></a></li>
-        <li class="clients-item"><a href="https://www.trychroma.com/" target="_blank" title="Chroma DB"><img src="./assets/images/chroma.png" alt="Chroma DB"></a></li>
-      </ul>
-      <button class="scroll-btn next" data-scroll-btn="next" aria-label="Next">></button>
-    </div>
-  </div>
-  <div class="tech-category">
-    <h4 class="tech-category-title">Backend & Deployment</h4>
-    <div class="scrolling-wrapper">
-      <button class="scroll-btn prev" data-scroll-btn="prev" aria-label="Previous"><</button> <ul class="clients-list has-scrollbar">
-          <li class="clients-item"><a href="https://fastapi.tiangolo.com/" target="_blank" title="FastAPI"><img src="./assets/images/fastapi.png" alt="FastAPI"></a></li>
-          <li class="clients-item"><a href="https://flask.palletsprojects.com/" target="_blank" title="Flask"><img src="./assets/images/flask.png" alt="Flask"></a></li>
-          <li class="clients-item"><a href="https://onnx.ai/" target="_blank" title="ONNX"><img src="./assets/images/onnx.png" alt="ONNX"></a></li>
-        <li class="clients-item"><a href="https://streamlit.io/" target="_blank" title="Streamlit"><img src="./assets/images/streamlit.png" alt="Streamlit"></a></li>
-        <li class="clients-item"><a href="https://www.gradio.app/" target="_blank" title="Gradio"><img src="./assets/images/gradio.png" alt="Gradio"></a></li>
-      </ul>
-      <button class="scroll-btn next" data-scroll-btn="next" aria-label="Next">></button>
-    </div>
-  </div>
-  <div class="tech-category">
-    <h4 class="tech-category-title">Database & Tools</h4>
-    <div class="scrolling-wrapper">
-      <button class="scroll-btn prev" data-scroll-btn="prev" aria-label="Previous"><</button>
-      <ul class="clients-list has-scrollbar">
-        <li class="clients-item"><a href="https://www.mysql.com/" target="_blank" title="MySQL"><img src="./assets/images/mysql.svg" alt="MySQL"></a></li>
-        <li class="clients-item"><a href="https://www.postgresql.org/" target="_blank" title="PostgreSQL"><img src="./assets/images/postgres.png" alt="PostgreSQL"></a></li>
-        <li class="clients-item"><a href="https://www.mongodb.com/" target="_blank" title="MongoDB"><img src="./assets/images/mongodb.png" alt="MongoDB" class="rounded-logo"></a></li>
-        <li class="clients-item"><a href="https://www.docker.com/" target="_blank" title="Docker"><img src="./assets/images/docker.png" alt="Docker"></a></li>
-        <li class="clients-item"><a href="https://git-scm.com/" target="_blank" title="Git"><img src="./assets/images/git.png" alt="Git"></a></li>
-      </ul>
-      <button class="scroll-btn next" data-scroll-btn="next" aria-label="Next">></button>
-    </div>
-  </div>
-</section>
-</article>
-
-
-<article class="portfolio" data-page="portfolio">
-  <header>
-    <h2 class="h2 article-title">Portfolio</h2>
-  </header>
-
-  <section class="projects">
-    <ul class="filter-list">
-      <li class="filter-item">
-        <button class="active" data-filter-btn>Resume Projects</button>
-      </li>
-      <li class="filter-item">
-        <button data-filter-btn>Gen AI</button>
-      </li>
-      <li class="filter-item">
-        <button data-filter-btn>NLP</button>
-      </li>
-      <li class="filter-item">
-        <button data-filter-btn>Computer Vision</button>
-      </li>
-    </ul>
-    <div class="filter-select-box">
-      <button class="filter-select" data-select>
-        <div class="select-value" data-selecct-value>Select category</div>
-        <div class="select-icon">
-          <ion-icon name="chevron-down"></ion-icon>
-        </div>
-      </button>
-      <ul class="select-list">
-        <li class="select-item"><button data-select-item>Resume Projects</button></li>
-        <li class="select-item"><button data-select-item>Gen AI</button></li>
-        <li class="select-item"><button data-select-item>NLP</button></li>
-        <li class="select-item"><button data-select-item>Computer Vision</button></li>
-      </ul>
-    </div>
-
-    <ul class="project-list">
-
-      <li class="project-item active" data-filter-item data-category="resume projects gen ai">
-        <div class="project-card">
-          <figure class="project-banner">
-            <img src="./assets/images/project/project-5.png" alt="Legal AI Agent">
-          </figure>
-          <div class="project-content">
-            <h3 class="project-title">Legal AI Agent</h3>
-            <p class="project-description">
-              A multi-agent legal AI system featuring a fine-tuned TinyLlama for summarization and the Gemini API for conversational Q&A.
-            </p>
+        <a class="project-entry" href="https://github.com/KS-Mohit/Legal-Doc-Summarization-LLM-QLoRA-RAG" target="_blank" rel="noopener">
+          <div class="project-header">
+            <span class="project-title">Legal Document Summarizer</span>
+            <span class="project-date">2025</span>
           </div>
-          <a href="https://github.com/KS-Mohit/Legal-Doc-Summarization-LLM-QLoRA-RAG" target="_blank" class="project-link">
-            <span>View on GitHub</span>
-          </a>
-        </div>
-      </li>
+          <span class="project-desc">A summarization agent fine-tuned on TinyLlama-1.1B via QLoRA, enabling stateful conversational Q&A and high-precision retrieval from dense legal documents.</span>
+        </a>
 
-      <li class="project-item active" data-filter-item data-category="resume projects gen ai">
-        <div class="project-card">
-          <figure class="project-banner">
-            <img src="./assets/images/project/project-7.png" alt="ChromaTune">
-          </figure>
-          <div class="project-content">
-            <h3 class="project-title">ChromaTune</h3>
-            <p class="project-description">
-              A multi-modal music discovery app using Google Gemini and FAISS to perform Retrieval-Augmented Generation (RAG) from images and text.
-            </p>
-          </div>
-          <a href="https://github.com/KS-Mohit/Chroma-Tune" target="_blank" class="project-link">
-            <span>View on GitHub</span>
-          </a>
-        </div>
-      </li>
-
-      <li class="project-item active" data-filter-item data-category="nlp">
-        <div class="project-card">
-          <figure class="project-banner">
-            <img src="./assets/images/project/project-1.PNG" alt="Support Ticket Classifier">
-          </figure>
-          <div class="project-content">
-            <h3 class="project-title">Support Ticket Classifier</h3>
-            <p class="project-description">
-              Fine-tuned a RoBERTa model for multi-task classification of support ticket issue type and urgency.
-            </p>
-          </div>
-          <a href="https://github.com/KS-Mohit/Ticket-analyzer" target="_blank" class="project-link">
-            <span>View on GitHub</span>
-          </a>
-        </div>
-      </li>
-
-      <!-- <li class="project-item active" data-filter-item data-category="gen ai">
-        <div class="project-card">
-          <figure class="project-banner">
-            <img src="./assets/images/project/project-2.png" alt="Quoteflow">
-          </figure>
-          <div class="project-content">
-            <h3 class="project-title">Quoteflow</h3>
-            <p class="project-description">
-              A quote retrieval system that uses a custom AI model and a RAG pipeline to understand natural language and find quotes based on semantic meaning.
-            </p>
-          </div>
-          <a href="https://github.com/KS-Mohit/your-repo" target="_blank" class="project-link">
-            <span>View on GitHub</span>
-          </a>
-        </div>
-      </li> -->
-
-      <li class="project-item active" data-filter-item data-category="gen ai">
-        <div class="project-card">
-          <figure class="project-banner">
-            <img src="./assets/images/project/project-3.png" alt="Cold Email Automation">
-          </figure>
-          <div class="project-content">
-            <h3 class="project-title">Cold Email Automation</h3>
-            <p class="project-description">
-              Automates job applications by scraping postings and using an AI to write personalized cold emails.
-            </p>
-          </div>
-          <a href="https://github.com/KS-Mohit/Cold-Mail-Generator" target="_blank" class="project-link">
-            <span>View on GitHub</span>
-          </a>
-        </div>
-      </li>
-
-      <!-- <li class="project-item active" data-filter-item data-category="nlp">
-        <div class="project-card">
-          <figure class="project-banner">
-            <img src="./assets/images/project/project-4.png" alt="Asteroid Risk Prediction">
-          </figure>
-          <div class="project-content">
-            <h3 class="project-title">Asteroid Risk Prediction</h3>
-            <p class="project-description">
-              Add your short project description here.
-            </p>
-          </div>
-          <a href="https://github.com/KS-Mohit/your-repo" target="_blank" class="project-link">
-            <span>View on GitHub</span>
-          </a>
-        </div>
-      </li> -->
-
-      <li class="project-item active" data-filter-item data-category="computer vision">
-        <div class="project-card">
-          <figure class="project-banner">
-            <img src="./assets/images/project/project-6.png" alt="Microorganism Classifier">
-          </figure>
-          <div class="project-content">
-            <h3 class="project-title">Microorganism Classifier</h3>
-            <p class="project-description">
-              Classified micro-organism images using features from Meta's DINOv2 model.
-            </p>
-          </div>
-          <a href="https://github.com/KS-Mohit/DinoV2-Microorganism-Classification" target="_blank" class="project-link">
-            <span>View on GitHub</span>
-          </a>
-        </div>
-      </li>
-
-    </ul>
-  </section>
-</article>
-
-      <article class="resume" data-page="resume">
-  <header>
-    <h2 class="h2 article-title">Resume</h2>
-  </header>
-
-  <section class="timeline">
-    <div class="title-wrapper">
-      <div class="icon-box">
-        <ion-icon name="book-outline"></ion-icon>
       </div>
-      <h3 class="h3">Experience</h3>
     </div>
-    <ol class="timeline-list">
-      <li class="timeline-item">
-        <h4 class="h4 timeline-item-title">Data Scientist</h4>
-        <span>Aug 2025 — Present</span>
-        <p class="timeline-text">
-          Engineered a full-stack AI recruiting platform using FastAPI and Langflow to automate lead management and outreach, reducing manual recruiter effort by 70%. Built and orchestrated multi-tool AI agents via Model Context Protocol (MCP) integrating Zoho CRM and Salesmsg APIs for automated lead handling and SMS communication. Designed, containerized, and deployed scalable microservices on Azure using Docker, PostgreSQL, and Redis for efficient data management and caching.
-        </p>
-      </li>
-    </ol>
-  </section>
+  </div>
 
-  <section class="timeline">
-    <div class="title-wrapper">
-      <div class="icon-box">
-        <ion-icon name="book-outline"></ion-icon>
-      </div>
-      <h3 class="h3">Experience</h3>
-    </div>
-    <ol class="timeline-list">
-      <li class="timeline-item">
-        <h4 class="h4 timeline-item-title">Machine Learning Intern</h4>
-        <span>May 2025 — July 2025</span>
-        <p class="timeline-text">
-          Fine-tuned a RoBERTa transformer for multi-task classification of support ticket issue type and urgency. Engineered a FastAPI backend to serve the model, reducing inference latency by 70% by exporting the PyTorch model to the ONNX format. Implemented a rule-based entity extractor for date recognition and keyword matching for product and complaint identification.
-        </p>
-      </li>
-    </ol>
-  </section>
+  <script>
+    function showPage(name) {
+      document.querySelectorAll('.page').forEach(function(p) { p.classList.remove('active'); });
+      document.getElementById('page-' + name).classList.add('active');
+      window.scrollTo(0, 0);
+    }
 
-  <section class="timeline">
-    <div class="title-wrapper">
-      <div class="icon-box">
-        <ion-icon name="book-outline"></ion-icon>
-      </div>
-      <h3 class="h3">Education</h3>
-    </div>
-    <ol class="timeline-list">
-      <li class="timeline-item">
-        <h4 class="h4 timeline-item-title">SRM University</h4>
-        <span>2021 — 2025</span>
-        <p class="timeline-text">Bachelor of Technology in Computer Science and Engineering.</p>
-      </li>
-    </ol>
-  </section>
-  
-  <a href="./assets/files/Mohit_Resume.pdf" class="form-btn" download style="margin: 40px auto 0;">
-    <ion-icon name="cloud-download-outline"></ion-icon>
-    <span>Download Resume</span>
-  </a>
-</article>
+    document.getElementById('logo-btn').addEventListener('click', function() { showPage('home'); });
+    document.getElementById('btn-work').addEventListener('click', function() { showPage('work'); });
+    document.getElementById('btn-projects').addEventListener('click', function() { showPage('projects'); });
+    document.getElementById('btn-blog').addEventListener('click', function() { showPage('blog'); });
 
-      <!-- <article class="blog" data-page="blog">
-        <header>
-          <h2 class="h2 article-title">Blog</h2>
-        </header>
-        <section class="blog-posts">
-          <ul class="blog-posts-list">
-            <li class="blog-post-item">
-              <a href="#">
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-1.jpg" alt="Data Driven Retail Strategy">
-                </figure>
-                <div class="blog-content">
-                  <div class="blog-meta">
-                    <p class="blog-category">Publication</p>
-                    <span class="dot"></span>
-                    <time datetime="2025-06-01">June 01, 2025</time>
-                  </div>
-                  <h3 class="h3 blog-item-title">Data Driven Retail Strategy</h3>
-                  <p class="blog-text">Research applying association rule learning, clustering and demand forecasting to extract actionable insights.</p>
-                </div>
-              </a>
-            </li>
-          </ul>
-        </section>
-      </article> -->
+    document.getElementById('btn-dark').addEventListener('click', function() {
+      document.body.classList.toggle('dark');
+      this.textContent = document.body.classList.contains('dark') ? 'Light' : 'Dark';
+    });
 
-<article class="contact" data-page="contact">
-
-  <section>
-    <header>
-      <h2 class="h2 article-title">My Visitors</h2>
-    </header>
-
-    <div class="visitor-map">
-    
-    </div>
-  </section>
-
-
-  <section>
-    <header>
-      <h2 class="h2 article-title">Contact Me</h2>
-    </header>
-
-    <div class="contact-form">
-      <form action="https://formsubmit.co/5102mohit@gmail.com" method="POST" class="form" data-form>
-        <div class="input-wrapper">
-          <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
-          <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
-        </div>
-        <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
-        <button class="form-btn" type="submit" data-form-btn>
-          <ion-icon name="paper-plane"></ion-icon>
-          <span>Send Message</span>
-        </button>
-      </form>
-    </div>
-  </section>
-
-</article>
-    </div>
-  </main>
-
-  <script src="./assets/js/script.js"></script>
-
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
+    document.getElementById('email-btn').addEventListener('click', function() {
+      var email = '5102mohit@gmail.com';
+      var btn = this;
+      function done() {
+        btn.textContent = 'Copied!';
+        setTimeout(function() { btn.textContent = 'Email'; }, 2000);
+      }
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(email).then(done).catch(fallback);
+      } else {
+        fallback();
+      }
+      function fallback() {
+        var ta = document.createElement('textarea');
+        ta.value = email;
+        ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0;';
+        document.body.appendChild(ta);
+        ta.focus();
+        ta.select();
+        try { document.execCommand('copy'); done(); } catch(e) { btn.textContent = email; setTimeout(function(){ btn.textContent = 'Email'; }, 4000); }
+        document.body.removeChild(ta);
+      }
+    });
+  </script>
 </body>
 </html>
